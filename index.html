@@ -44,10 +44,6 @@ canvas#bg {
   width:100%;
   height:100%;
   z-index:-1;
-  /* 确保覆盖安全区 */
-  inset: env(safe-area-inset-top) env(safe-area-inset-right)
-         env(safe-area-inset-bottom) env(safe-area-inset-left);
-  background:black;
 }
 section {
   width:100%;
@@ -233,6 +229,7 @@ loop();
 </script>
 </body>
 </html>
+
 
 
 
