@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>X.∞ — 十年·焕新 · 澳门高能启航</title>
+    <style>
+        :root {
+            --text: #f5f5f7;
+            --muted: #86868b;
+            --accent: linear-gradient(90deg, #38bdf8, #3b82f6);
+            --highlight: rgba(56, 189, 248, 0.2); /* 高亮背景色 */
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", "PingFang SC", sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: var(--text);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Logo样式 */
+        .logo-container {
+            position: fixed;
+            top: 20px;
+            left: 30px;
+            z-index: 100;
+        }
+        
+        .logo {
+            height: 100px;
+            width: auto;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo:hover {
+            opacity: 1;
+        }
+        
+        canvas#bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        section {
+            width: 100%;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent 70%);
+            margin: 80px auto;
+            width: 80%;
+        }
+        
+        h1, h2, h3, p {
+            margin: 0;
+        }
+        
+        h1 {
+            font-size: clamp(2.4rem, 5vw, 4.2rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        
+        h2 {
+            font-size: clamp(1.6rem, 3vw, 2.6rem);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 2.0;
+        }
+        
+        .lead {
+            font-size: 1.2rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+        
+        .countdown {
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--accent);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-top: 30px;
+        }
+        
+        .fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .fade.visible {
+            opacity: 1;
+            transform: none;
+        }
+        
+        .timeline {
+            max-width: 600px;
+            margin: 60px auto 0;
+            text-align: left;
+        }
+        
+        .timeline-item {
+            margin-bottom: 28px;
+        }
+        
+        .timeline-item h3 {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+        
+        .timeline-item p {
+            font-size: 1rem;
+            color: var(--muted);
+        }
+        
+        .map-link {
+            display: inline-block;
+            margin-top: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            background: var(--accent);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        
+        footer {
+            padding: 80px 20px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 28px;
+            font-size: 16px;
+        }
+        
+        /* 高亮显示样式 */
+        .highlight {
+            background: var(--highlight);
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg"></canvas>
+
+    <!-- Logo容器 -->
+    <div class="logo-container">
+        <img src="医时10年完整版LOGO.png" alt="X.∞ 标志" class="logo">
+    </div>
+
+    <section id="hero">
+        <h1 class="fade">X.∞ — AI Links Future</h1>
+        <h2 class="fade">十年 · 焕新 · 澳门高能启航</h2>
+        <p class="lead fade">
+            <span class="highlight">十年</span>征程，璀璨如星。我们并肩穿越从0到1的创业星河，现在，正站在
+            <span class="highlight">全新的起点</span>，一起链接无限可能。
+        </p>
+        <div id="countdown" class="countdown fade">-- 天 -- : -- : -- : --</div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="highlights">
+        <h2 class="fade">活动亮点</h2>
+        <p class="fade" style="max-width:600px;margin:20px auto 0">
+            全员共聚、<span class="highlight">战略焕新</span>、荣耀狂欢。<br>
+            一场融合<span class="highlight">科技与激情</span>的年度盛典，点亮下一个十年。
+        </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="schedule">
+        <h2 class="fade">三天行程</h2>
+        <div class="timeline">
+            <div class="timeline-item fade">
+                <h3>DAY 1 — 2025-11-08</h3>
+                <p>抵达澳门，入住未来基地。<br>
+                    领取<span class="highlight">【十年限定 T 恤】</span>，部门集结，晚宴 & 团建。</p>
+            </div>
+            <div class="timeline-item fade">
+                <h3>DAY 2 — 2025-11-09</h3>
+                <p><span class="highlight">CEO 战略分享</span> × AI 产品引爆 × 团建互动；<br>
+                    夜幕降临，荣耀狂欢<span class="highlight">（奖品、期权、惊喜）</span>。</p>
+            </div>
+            <div class="timeline-item fade">
+                <h3>DAY 3 — 2025-11-10</h3>
+                <p>漫步澳门，<span class="highlight">自由漫游</span>；<br>
+                    傍晚集合返沪，满载热爱与灵感再出发。</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="message">
+        <h2 class="fade">注意事项</h2>
+        <p class="fade">
+            航班信息，我们将以<span class="highlight">短信</span>的方式通知。<br>
+            11月9日会议：全员穿着定制T恤；晚宴自行着装。<br>
+            澳门使用英标插头（三脚扁插），电压为220V。请提前准备好<span class="highlight">转换插头</span>哦！
+        </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="location">
+        <h2 class="fade">活动地点</h2>
+        <h3 class="fade" style="margin-top:20px">澳门葡京人酒店</h3>
+        <p class="fade">电话：+853-88826888</p>
+        <a href="https://ditu.amap.com/place/B0G39SNNZW" target="_blank" class="map-link fade">在地图中查看 →</a>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="contact">
+        <h2 class="fade">联系方式</h2>
+        <p class="fade">小艾：15618983822<br>Cindy：13636458990</p>
+    </section>
+
+    <footer>
+        © 十年·焕新 筹备组！<br>
+    </footer>
+
+    <script>
+        // 倒计时功能
+        (function() {
+            // 目标日期：2025-11-08 09:00 GMT+8
+            const target = new Date(Date.UTC(2025, 10, 8, 1, 0, 0));
+            const el = document.getElementById("countdown");
+            
+            function update() {
+                const now = new Date();
+                const diff = target - now;
+                
+                if (diff <= 0) {
+                    el.textContent = "活动进行中 🎉";
+                    clearInterval(ti);
+                    return;
+                }
+                
+                const s = Math.floor(diff / 1000);
+                const d = Math.floor(s / 86400);
+                const h = Math.floor((s % 86400) / 3600);
+                const m = Math.floor((s % 3600) / 60);
+                const sec = s % 60;
+                
+                el.textContent = `${d} 天 ${String(h).padStart(2, '0')} : ${String(m).padStart(2, '0')} : ${String(sec).padStart(2, '0')}`;
+            }
+            
+            update();
+            const ti = setInterval(update, 1000);
+        })();
+
+        // 元素淡入动画
+        const fades = document.querySelectorAll('.fade');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        fades.forEach(el => observer.observe(el));
+
+        // 蓝色海浪流光背景动画
+        const c = document.getElementById('bg'),
+              ctx = c.getContext('2d');
+        
+        function resize() {
+            c.width = window.innerWidth;
+            c.height = window.innerHeight;
+        }
+        
+        window.addEventListener('resize', resize);
+        resize();
+        
+        let t = 0;
+        function loop() {
+            t += 0.015;
+            const w = c.width,
+                  h = c.height;
+            
+            // 绘制背景渐变
+            const gradient = ctx.createLinearGradient(0, 0, 0, h);
+            gradient.addColorStop(0, '#00172b');
+            gradient.addColorStop(1, '#002c4f');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, w, h);
+            
+            // 绘制波浪
+            ctx.beginPath();
+            for (let x = 0; x <= w; x += 10) {
+                const y = h/2 + Math.sin(x*0.01 + t)*20 + Math.cos(x*0.02 + t*1.5)*10;
+                ctx.lineTo(x, y);
+            }
+            ctx.lineTo(w, h);
+            ctx.lineTo(0, h);
+            ctx.closePath();
+            
+            // 波浪渐变
+            const waveGrad = ctx.createLinearGradient(0, h/2, w, h);
+            waveGrad.addColorStop(0, 'rgba(56,189,248,0.3)');
+            waveGrad.addColorStop(1, 'rgba(59,130,246,0.6)');
+            ctx.fillStyle = waveGrad;
+            ctx.fill();
+            
+            requestAnimationFrame(loop);
+        }
+        
+        loop();
+    </script>
+</body>
+</html>
